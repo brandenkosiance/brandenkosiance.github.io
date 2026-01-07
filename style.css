@@ -9,32 +9,85 @@
     --font-main: 'Inter', sans-serif;
 }
 
-/* Force White Text for All States */
-a, a:visited, a:hover, a:active {
-    text-decoration: none !important;
-    color: var(--text-color) !important;
-}
-
+/* Base resets */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-main);
     padding: 40px;
     margin: 0;
-    transition: opacity 0.4s ease;
 }
 
-nav {
+/* Forced Link Styles to prevent Purple/Blue */
+a, a:visited, a:active {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* --- HEADER SYSTEM --- */
+.portfolio-nav {
     max-width: 1200px;
-    margin: 0 auto 50px;
+    margin: 0 auto 60px auto;
+    padding-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
 }
 
-.brand { letter-spacing: 3px; font-weight: 600; text-transform: uppercase; }
-.subtitle { color: var(--text-muted); font-weight: 300; margin-top: 5px; }
+.nav-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns photo with text baseline */
+    margin-bottom: 25px;
+}
 
-/* 3-Wide Grid */
+.brand {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.profile-frame {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--accent-gray);
+}
+
+.nav-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted) !important;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    width: fit-content;
+}
+
+.contact-row:hover {
+    color: var(--text-color) !important;
+}
+
+/* --- PROJECT GRID --- */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -46,16 +99,15 @@ nav {
 .portfolio-item {
     position: relative;
     display: block;
-    background: var(--accent-gray);
     aspect-ratio: 1/1;
     overflow: hidden;
     border: 1px solid var(--border-color);
 }
 
-.image-box { 
-    width: 100%; 
-    height: 100%; 
-    position: relative; 
+.image-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .image-box img {
@@ -65,84 +117,58 @@ nav {
     transition: transform 0.6s ease;
 }
 
-/* Item Title (Bottom Overlay) */
+/* Title at bottom of cover */
 .item-title {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,1));
-    font-size: 0.9rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 2;
+    color: var(--text-color) !important;
     transition: opacity 0.3s ease;
 }
 
-/* THE OVERLAY - FORMAL CENTERING FIX */
+/* White centered hover overlay */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.98); /* Near-solid white */
-    color: #000000 !important; /* Force black text on white bg */
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    
-    /* Grid Centering */
+    background: rgba(255, 255, 255, 0.98);
+    color: #000000 !important;
     display: grid;
-    place-items: center; 
+    place-items: center;
     padding: 30px;
-    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    z-index: 3;
+    transition: opacity 0.3s ease;
 }
 
-.overlay p {
-    margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    font-weight: 400;
-    max-width: 100%; /* Ensures text wraps within the box */
-    text-align: center; /* Change to left if you prefer left-aligned reading */
-    word-wrap: break-word;
-}
-
-/* Hover States */
 .portfolio-item:hover .overlay { opacity: 1; }
 .portfolio-item:hover .item-title { opacity: 0; }
 .portfolio-item:hover img { transform: scale(1.05); }
 
-/* Sub-page Specifics */
-.project-container { max-width: 900px; margin: 0 auto; padding-top: 40px; }
-.back-link { color: var(--text-muted) !important; font-size: 0.8rem; margin-bottom: 30px; display: block; text-transform: uppercase; }
-.back-link:hover { color: var(--text-color) !important; }
-
-.hero-box { 
-    width: 100%; 
-    height: 450px; 
-    background: var(--accent-gray); 
-    margin-bottom: 40px; 
-    display: grid; 
-    place-items: center; 
-    border: 1px solid var(--border-color); 
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-bottom: 40px;
+    color: var(--text-muted);
 }
-.hero-box img { max-width: 70%; max-height: 70%; object-fit: contain; }
 
-.content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-.description h1 { margin-bottom: 20px; font-size: 2.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
-
-footer { text-align: center; margin-top: 80px; padding-bottom: 40px; color: var(--text-muted); font-size: 0.85rem; }
-
-/* Responsive Mobile */
+/* Responsive */
 @media (max-width: 900px) {
     .grid-container { grid-template-columns: repeat(2, 1fr); }
-    body { padding: 20px; }
 }
 @media (max-width: 600px) {
     .grid-container { grid-template-columns: 1fr; }
-    .content-grid { grid-template-columns: 1fr; }
+    .nav-header-main { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
 }
