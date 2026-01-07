@@ -23,6 +23,19 @@ body {
     line-height: 1.6;
 }
 
+/* --- ANIMATION STYLES (Add to bottom of style.css) --- */
+.fade-init {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Float up to natural position */
+}
+
+
 a { text-decoration: none; color: inherit; }
 
 /* HEADER */
