@@ -1,0 +1,181 @@
+/* Color Palette & Fonts */
+:root {
+    --primary-bg: #0a192f;        /* Deep Blue/Navy */
+    --secondary-bg: #112240;      /* Slightly Lighter Blue */
+    --text-light: #ccd6f6;        /* Light Grey for headings */
+    --text-dark: #8892b0;         /* Darker Grey for body text */
+    --accent-color: #64ffda;      /* Neon Cyan */
+    --shadow-light: rgba(2,12,27,0.7);
+    --shadow-dark: rgba(2,12,27,0.9);
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-monospace: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    padding: 60px 0 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-bg);
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+header .tagline {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    font-family: var(--font-monospace);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.project-item {
+    position: relative;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px var(--shadow-dark);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -20px var(--shadow-dark);
+}
+
+.project-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block;
+    filter: grayscale(80%) brightness(70%); /* Darken and desaturate */
+    transition: filter 0.3s;
+}
+
+.project-item:hover img {
+    filter: grayscale(0%) brightness(100%); /* Full color on hover */
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10, 25, 47, 0.9)); /* Dark gradient from bottom */
+    color: var(--text-light);
+    padding: 20px;
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 0.3s ease-out;
+}
+
+.project-item:hover .project-overlay {
+    transform: translateY(0%); /* Slide up on hover */
+}
+
+.project-overlay h3 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.project-overlay p {
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--secondary-bg);
+    font-size: 0.9em;
+}
+
+footer .social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: var(--text-light);
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 columns on tablet */
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    header .tagline {
+        font-size: 0.9em;
+    }
+    .container {
+        padding: 15px;
+    }
+}
