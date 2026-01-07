@@ -1,96 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branden Kosiance | Mechanical Engineering</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <h1 class="brand">BRANDEN KOSIANCE</h1>
-            <p class="subtitle">Senior Mechanical Engineering Student</p>
-        </div>
-    </nav>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-    <main class="grid-container">
-        
-        <a href="internship-experience.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-internship.jpg" alt="Internship">
-                <div class="item-title">Internship Experience</div>
-                <div class="overlay"><p>Extensive Professional Experience</p></div>
-            </div>
-        </a>
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-gray: #111111;
+    --border-color: #222222;
+    --text-muted: #888888;
+    --font-main: 'Inter', sans-serif;
+}
 
-        <a href="powder-system.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-powder.jpg" alt="Powder System">
-                <div class="item-title">Powder Classification System</div>
-                <div class="overlay"><p>Small-Scale Powder Classification Design & Testing</p></div>
-            </div>
-        </a>
+/* Global Fix for Purple/Blue Links */
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: var(--text-color);
+}
 
-        <a href="gearbox.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-gearbox.jpg" alt="Gearbox">
-                <div class="item-title">Gearbox Design</div>
-                <div class="overlay"><p>Multistage Planetary Design</p></div>
-            </div>
-        </a>
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    padding: 40px;
+    margin: 0;
+    transition: opacity 0.4s ease; /* For JS page transitions */
+}
 
-        <a href="robotic-prototype.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-robot.jpg" alt="Robot Prototype">
-                <div class="item-title">Autonomous Prototype</div>
-                <div class="overlay"><p>Robotic System Design</p></div>
-            </div>
-        </a>
+nav {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
 
-        <a href="hv-junction.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-hv.jpg" alt="HV JB">
-                <div class="item-title">HV Junction Box</div>
-                <div class="overlay"><p>FSAE High Voltage Junction Box Design</p></div>
-            </div>
-        </a>
+.brand { letter-spacing: 3px; font-weight: 600; text-transform: uppercase; }
+.subtitle { color: var(--text-muted); font-weight: 300; margin-top: 5px; }
 
-        <a href="charging-cart.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-charging.jpg" alt="Charging Cart">
-                <div class="item-title">Charging Cart</div>
-                <div class="overlay"><p>FSAE Accumulator Charging Cart Design</p></div>
-            </div>
-        </a>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        <a href="battery-cooling.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-battery.jpg" alt="Battery Cooling">
-                <div class="item-title">Battery Cooling Testing</div>
-                <div class="overlay"><p>FSAE Battery Segment Cooling Testing</p></div>
-            </div>
-        </a>
+.portfolio-item {
+    position: relative;
+    display: block;
+    background: var(--accent-gray);
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
 
-        <a href="actuator-fixtures.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-fixtures.jpg" alt="Actuator Fixtures">
-                <div class="item-title">Actuator Fixtures</div>
-                <div class="overlay"><p>Linear and Rotary Robot Arm Fixtures</p></div>
-            </div>
-        </a>
+.image-box { width: 100%; height: 100%; position: relative; }
 
-        <a href="about-me.html" class="portfolio-item">
-            <div class="image-box">
-                <img src="thumb-about.jpg" alt="About Me">
-                <div class="item-title">About Me</div>
-                <div class="overlay"><p>Background, Experience, & Motivation</p></div>
-            </div>
-        </a>
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
 
-    </main>
+/* THE TITLE AT THE BOTTOM */
+.item-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    color: var(--text-color); /* Forced White */
+}
 
-    <footer><p>&copy; 2026 Branden Kosiance</p></footer>
-    <script src="script.js"></script>
-</body>
-</html>
+/* THE OVERLAY (DESCRIPTION) - CENTER FIX */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Clean white overlay */
+    color: #000000; /* Text is black on the white hover background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+.overlay p { 
+    font-size: 1rem; 
+    font-weight: 400; 
+    margin: 0; 
+    line-height: 1.4;
+}
+
+/* HOVER LOGIC */
+.portfolio-item:hover .overlay { opacity: 1; }
+.portfolio-item:hover .item-title { opacity: 0; } 
+.portfolio-item:hover img { transform: scale(1.05); }
+
+/* SUB-PAGE DESIGN */
+.project-container { max-width: 900px; margin: 0 auto; padding-top: 40px; }
+.back-link { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin-bottom: 30px; display: block; text-transform: uppercase; }
+.back-link:hover { color: var(--text-color); }
+
+.hero-box { width: 100%; height: 450px; background: var(--accent-gray); margin-bottom: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); }
+.hero-box img { max-width: 80%; max-height: 80%; object-fit: contain; }
+
+.content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+.description h1 { margin-bottom: 20px; font-size: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.gallery img { width: 100%; border: 1px solid var(--border-color); }
+
+/* ANIMATION CLASSES FOR JS */
+.fade-init {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .grid-container { grid-template-columns: 1fr; }
+    .content-grid { grid-template-columns: 1fr; }
+}
