@@ -21,7 +21,6 @@ body {
 /* Forced Link Styles to prevent Purple/Blue */
 a, a:visited, a:active {
     text-decoration: none !important;
-    color: inherit !important;
 }
 
 /* --- HEADER SYSTEM --- */
@@ -35,7 +34,7 @@ a, a:visited, a:active {
 .nav-header-main {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Aligns photo with text baseline */
+    align-items: flex-end;
     margin-bottom: 25px;
 }
 
@@ -77,14 +76,20 @@ a, a:visited, a:active {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--text-muted) !important;
+    color: var(--text-muted) !important; /* Force grey by default */
     font-size: 0.9rem;
     transition: color 0.3s ease;
     width: fit-content;
+    cursor: pointer;
+}
+
+/* This ensures the text and SVG both change color together */
+.contact-row span, .contact-row svg {
+    color: inherit !important;
 }
 
 .contact-row:hover {
-    color: var(--text-color) !important;
+    color: var(--text-color) !important; /* Turn white on hover */
 }
 
 /* --- PROJECT GRID --- */
@@ -117,7 +122,6 @@ a, a:visited, a:active {
     transition: transform 0.6s ease;
 }
 
-/* Title at bottom of cover */
 .item-title {
     position: absolute;
     bottom: 0;
@@ -134,7 +138,7 @@ a, a:visited, a:active {
     transition: opacity 0.3s ease;
 }
 
-/* White centered hover overlay */
+/* Center and wrap text description */
 .overlay {
     position: absolute;
     top: 0;
@@ -143,20 +147,29 @@ a, a:visited, a:active {
     height: 100%;
     background: rgba(255, 255, 255, 0.98);
     color: #000000 !important;
-    display: grid;
-    place-items: center;
-    padding: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     opacity: 0;
     z-index: 3;
     transition: opacity 0.3s ease;
+    box-sizing: border-box;
+}
+
+.overlay p {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 85%; /* Prevents text from hitting the edges */
+    word-wrap: break-word;
 }
 
 .portfolio-item:hover .overlay { opacity: 1; }
 .portfolio-item:hover .item-title { opacity: 0; }
 .portfolio-item:hover img { transform: scale(1.05); }
 
-/* Footer */
 footer {
     text-align: center;
     margin-top: 80px;
@@ -164,7 +177,6 @@ footer {
     color: var(--text-muted);
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .grid-container { grid-template-columns: repeat(2, 1fr); }
 }
