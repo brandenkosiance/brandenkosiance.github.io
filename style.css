@@ -1,96 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
-:root {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --accent-gray: #111111;
-    --border-color: #222222;
-    --text-muted: #888888;
-    --font-main: 'Inter', sans-serif;
-}
-
-/* Base resets */
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
-    padding: 40px;
-    margin: 0;
-}
-
-/* Forced Link Styles to prevent Purple/Blue */
-a, a:visited, a:active {
-    text-decoration: none !important;
-}
-
-/* --- HEADER SYSTEM --- */
-.portfolio-nav {
-    max-width: 1200px;
-    margin: 0 auto 60px auto;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-header-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 25px;
-}
-
-.brand {
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-top: 5px;
-}
-
-.profile-frame {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    background: var(--accent-gray);
-}
-
-.nav-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.contact-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.contact-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-muted) !important;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    width: fit-content;
-    cursor: pointer;
-}
-
-.contact-row span, .contact-row svg {
-    color: inherit !important;
-}
-
-.contact-row:hover {
-    color: var(--text-color) !important;
-}
-
 /* --- PROJECT GRID --- */
 .grid-container {
     display: grid;
@@ -106,7 +13,7 @@ a, a:visited, a:active {
     aspect-ratio: 1/1;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    background-color: #000; /* Ensures the background is black when image fades */
+    background-color: #000000; /* This is the 'base' the image fades into */
 }
 
 .image-box {
@@ -119,42 +26,43 @@ a, a:visited, a:active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease, opacity 0.4s ease; /* Added opacity transition */
+    display: block;
+    position: relative;
+    z-index: 10; /* Image sits on top */
+    opacity: 1;    /* Full brightness at start */
+    transition: opacity 0.4s ease, transform 0.6s ease;
 }
 
-/* Reduced gradient intensity to keep images bright */
 .item-title {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.5)); /* Lightened from 0.9 to 0.5 */
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    z-index: 2;
-    color: var(--text-color) !important;
+    z-index: 11; /* Sits slightly above the image to stay sharp */
+    color: #ffffff !important;
+    text-shadow: 0px 2px 8px rgba(0,0,0,1); /* Shadow helps white text on light images */
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-/* Centered fade-behind overlay (Dark tint with white text) */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent tint */
-    color: #ffffff !important;      /* White text on dark background */
+    background-color: transparent; /* No background needed since item-bg is black */
+    color: #ffffff !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    opacity: 0;
-    z-index: 3;
-    transition: opacity 0.4s ease;
+    padding: 25px;
+    z-index: 5; /* Sits BEHIND the image */
     box-sizing: border-box;
 }
 
@@ -162,39 +70,18 @@ a, a:visited, a:active {
     margin: 0;
     text-align: center;
     font-size: 1rem;
-    line-height: 1.4;
-    max-width: 85%;
-    word-wrap: break-word;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    line-height: 1.5;
+    max-width: 90%;
+    font-weight: 300;
 }
 
-/* Hover States */
-.portfolio-item:hover .overlay { 
-    opacity: 1; 
+/* --- THE HOVER ACTION --- */
+
+.portfolio-item:hover img {
+    opacity: 0.4; /* Fades the image ONLY during hover */
+    transform: scale(1.05); /* Optional: slight zoom for a 'mechanical' feel */
 }
 
-.portfolio-item:hover .item-title { 
-    opacity: 0; 
-}
-
-.portfolio-item:hover img { 
-    transform: scale(1.05); 
-    opacity: 0.5; /* This makes the image "fade behind" the overlay */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 80px;
-    padding-bottom: 40px;
-    color: var(--text-muted);
-}
-
-@media (max-width: 900px) {
-    .grid-container { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-    .grid-container { grid-template-columns: 1fr; }
-    .nav-header-main { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+.portfolio-item:hover .item-title {
+    opacity: 0; /* Hides the bottom title during hover */
 }
