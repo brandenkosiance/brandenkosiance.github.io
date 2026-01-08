@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder Classification System | Branden Kosiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        /* PAGE SPECIFIC STYLES (Same as template) */
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc; 
+        }
+
+        /* Centered, Scalable Image Container */
+        .hero-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        /* Extra margin for images inserted mid-text */
+        .mid-text-image {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            width: clamp(300px, 80vw, 800px); 
+            height: auto;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .project-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .project-body ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+
+        .project-body li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .project-body li::before {
+            content: "■"; 
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 30px 0;
+            margin-bottom: 60px;
+        }
+
+        .spec-item h4 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .spec-item p {
+            margin: 0;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="align-items: center; justify-content: center;">
+            <div class="nav-identity" style="text-align: center;">
+                <h1 class="brand">POWDER CLASSIFICATION SYSTEM</h1>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-content">
+        
+        <div class="hero-image-container">
+            <img src="makesens.jpg" alt="MakeSens System Overview" class="hero-image">
+        </div>
+
+        <h2 class="project-title">MakeSens Battery Technologies</h2>
+
+        <div class="project-body">
+            <p>Senior capstone design project in which I designed a small-scale powder classification system to target and classify a range of particle sizes in order to create a higher powder uniformity for battery anode coating materials, to ultimately increase battery performance.</p>
+            
+            <div class="hero-image-container mid-text-image">
+                <img src="classifier.jpg" alt="Classifier CAD Model" class="hero-image">
+            </div>
+
+            <p><strong>Deliverables include:</strong></p>
+
+            <ul>
+                <li>Took team lead role to break down project requirements into concise, manageable deliverables, create task timelines using Gantt Charts, and assign tasks to members based on prior experience and preference. Led meetings to drive communication across sub-systems.</li>
+                <li>Led mechanical design of unique air classification system using SolidWorks PDM.</li>
+                <li>Led mechanical design of motor assembly to facilitate actuation of two mechanisms to vary classifier internal geometry, consequently allowing for target particle size range variability.</li>
+                <li>Conducted simulation testing on classifier design using SolidWorks Particle Flow and Ansys Fluent CFD.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item">
+                <h4>Role</h4>
+                <p>Team Lead</p>
+            </div>
+            <div class="spec-item">
+                <h4>Location</h4>
+                <p>Victoria</p>
+            </div>
+            <div class="spec-item">
+                <h4>Tools</h4>
+                <p>SolidWorks PDM, Ansys Fluent, KiCAD, Microsoft Office Suite</p>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Branden Kosiance</p>
+    </footer>
+
+</body>
+</html>
