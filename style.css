@@ -52,7 +52,6 @@ body {
     margin-top: 5px;
 }
 
-/* Headshot alignment logic */
 .nav-portrait {
     display: flex;
     justify-content: flex-end;
@@ -99,9 +98,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* Increased row gap to accommodate the floating labels */
-    row-gap: 50px; 
-    column-gap: 30px;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -110,20 +107,17 @@ body {
     position: relative;
     display: block;
     aspect-ratio: 1/1;
-    /* Visible so label can overlap the top edge */
-    overflow: visible; 
+    overflow: hidden; /* Changed back to hidden to contain the label and image */
     background-color: #000; 
     text-decoration: none !important;
+    border-radius: 25px; 
+    border: 1px solid var(--border-color);
 }
 
-/* Container for image to keep fillets clean */
 .image-box {
     width: 100%;
     height: 100%;
     position: relative;
-    overflow: hidden;
-    border-radius: 25px; 
-    border: 1px solid var(--border-color);
 }
 
 .image-box img {
@@ -137,10 +131,10 @@ body {
     transition: opacity 0.4s ease, transform 0.6s ease;
 }
 
-/* FLOATING LABEL: Centered at top, high contrast black on white */
+/* UPDATED: LABEL AT BOTTOM CENTER, PLACED ON IMAGE */
 .item-title {
     position: absolute;
-    top: -15px; /* Floats above the top border */
+    bottom: 20px; /* Positioned inside the image at the bottom */
     left: 50%;
     transform: translateX(-50%);
     width: auto;
@@ -148,22 +142,20 @@ body {
     
     background-color: #ffffff; 
     color: #000000 !important;
-    padding: 8px 22px;
-    border-radius: 6px;
+    padding: 10px 24px;
+    border-radius: 8px;
     
-    font-size: 0.85rem; 
+    font-size: 0.9rem; 
     font-weight: 800; 
     text-transform: uppercase;
     letter-spacing: 1.5px;
     
-    z-index: 20; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    /* Bouncy transition for a modern feel */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 25; /* Higher than image z-index (10) */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
     pointer-events: none;
 }
 
-/* Hover Description (Revealed behind image) */
 .overlay {
     position: absolute;
     top: 0;
@@ -193,11 +185,11 @@ body {
 
 .portfolio-item:hover .item-title {
     opacity: 0;
-    transform: translate(-50%, -10px); /* Slides up as it fades */
+    transform: translate(-50%, 10px); /* Slides down slightly on fade */
 }
 
 .portfolio-item:hover img {
-    opacity: 0.25; /* Darkens image to reveal white text behind */
+    opacity: 0.25; 
     transform: scale(1.04);
 }
 
@@ -211,16 +203,16 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Mobile Adjustments */
 @media (max-width: 600px) {
     .nav-header-main { 
         flex-direction: column-reverse; 
         align-items: flex-start; 
         gap: 20px; 
     }
-    .image-box { border-radius: 18px; }
+    .portfolio-item { border-radius: 18px; }
     .item-title {
-        font-size: 0.75rem;
-        padding: 6px 16px;
+        font-size: 0.8rem;
+        padding: 8px 18px;
+        bottom: 15px;
     }
 }
