@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 :root {
     --bg-color: #000000;
@@ -30,7 +30,6 @@ body {
 .nav-header-main {
     display: flex;
     justify-content: space-between;
-    /* Aligns the name and the headshot to the same bottom baseline */
     align-items: flex-end; 
     margin-bottom: 25px;
     width: 100%;
@@ -53,7 +52,7 @@ body {
     margin-top: 5px;
 }
 
-/* Headshot: Scaled and constrained to header width */
+/* Headshot alignment logic */
 .nav-portrait {
     display: flex;
     justify-content: flex-end;
@@ -61,7 +60,6 @@ body {
 }
 
 .profile-frame {
-    /* Scaling constrained so it doesn't overpower the headers */
     width: clamp(80px, 15vw, 180px); 
     height: clamp(80px, 15vw, 180px);
     border-radius: 50%;
@@ -100,9 +98,10 @@ body {
 /* --- PROJECT GRID --- */
 .grid-container {
     display: grid;
-    /* Smart scaling logic for 1, 2, or 3 columns */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    /* Increased row gap to accommodate the floating labels */
+    row-gap: 50px; 
+    column-gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -111,19 +110,20 @@ body {
     position: relative;
     display: block;
     aspect-ratio: 1/1;
-    overflow: hidden;
+    /* Visible so label can overlap the top edge */
+    overflow: visible; 
     background-color: #000; 
     text-decoration: none !important;
-    
-    /* FILLET: Rounded corners on all 4 sides */
-    border-radius: 25px; 
-    border: 1px solid var(--border-color);
 }
 
+/* Container for image to keep fillets clean */
 .image-box {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
+    border-radius: 25px; 
+    border: 1px solid var(--border-color);
 }
 
 .image-box img {
@@ -133,30 +133,37 @@ body {
     display: block;
     position: relative;
     z-index: 10;
-    opacity: 1; /* Pure brightness */
+    opacity: 1;
     transition: opacity 0.4s ease, transform 0.6s ease;
 }
 
-/* DESCRIPTION: Large, Bold, Solid Black */
+/* FLOATING LABEL: Centered at top, high contrast black on white */
 .item-title {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 20px;
+    top: -15px; /* Floats above the top border */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    white-space: nowrap; 
     
-    font-size: 1.1rem; 
-    font-weight: 700; /* Extra Bold */
+    background-color: #ffffff; 
+    color: #000000 !important;
+    padding: 8px 22px;
+    border-radius: 6px;
     
+    font-size: 0.85rem; 
+    font-weight: 800; 
     text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 11; 
-    color: #000000 !important; 
-    text-shadow: none; /* No shadow for clean black look */
-    transition: opacity 0.3s ease;
+    letter-spacing: 1.5px;
+    
+    z-index: 20; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    /* Bouncy transition for a modern feel */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     pointer-events: none;
 }
 
+/* Hover Description (Revealed behind image) */
 .overlay {
     position: absolute;
     top: 0;
@@ -168,8 +175,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    z-index: 5; /* Hidden behind image until hover */
+    padding: 35px;
+    z-index: 5; 
     box-sizing: border-box;
 }
 
@@ -178,18 +185,20 @@ body {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.5;
-    max-width: 85%;
+    max-width: 90%;
     font-weight: 400;
 }
 
 /* --- HOVER ACTIONS --- */
-.portfolio-item:hover img {
-    opacity: 0.3; 
-    transform: scale(1.05);
-}
 
 .portfolio-item:hover .item-title {
     opacity: 0;
+    transform: translate(-50%, -10px); /* Slides up as it fades */
+}
+
+.portfolio-item:hover img {
+    opacity: 0.25; /* Darkens image to reveal white text behind */
+    transform: scale(1.04);
 }
 
 /* Footer */
@@ -209,6 +218,9 @@ footer {
         align-items: flex-start; 
         gap: 20px; 
     }
-    /* Slightly smaller fillet for small phone screens */
-    .portfolio-item { border-radius: 15px; } 
+    .image-box { border-radius: 18px; }
+    .item-title {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
 }
