@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
     --bg-color: #000000;
@@ -9,7 +9,7 @@
     --font-main: 'Inter', sans-serif;
 }
 
-/* Base resets */
+/* Base resets with Fluid Padding */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -19,7 +19,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- HEADER SYSTEM (Fluid) --- */
+/* --- HEADER SYSTEM --- */
 .portfolio-nav {
     max-width: 1200px;
     margin: 0 auto clamp(30px, 8vw, 60px) auto;
@@ -47,10 +47,10 @@ body {
     margin-top: 5px;
 }
 
-/* REQUIREMENT: Scaling headshot to take up more screen space on large displays */
+/* UPDATED: Larger, scaling headshot */
 .profile-frame {
-    width: clamp(100px, 20vw, 250px);  /* Minimum 100px, scales with 20% of screen width, max 250px */
-    height: clamp(100px, 20vw, 250px);
+    width: clamp(100px, 18vw, 240px); 
+    height: clamp(100px, 18vw, 240px);
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -83,11 +83,11 @@ body {
     color: var(--text-color) !important;
 }
 
-/* --- SMART PROJECT GRID --- */
+/* --- PROJECT GRID --- */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+    gap: 25px; /* Increased gap slightly for filleted look */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -97,20 +97,18 @@ body {
     display: block;
     aspect-ratio: 1/1;
     overflow: hidden;
-    border: 1px solid var(--border-color);
     background-color: #000; 
     text-decoration: none !important;
-
-    /* REQUIREMENT: Corner cuts on the squares */
-    /* This cuts the top-right and bottom-left corners slightly */
-    clip-path: polygon(10% 0%, 100% 0, 100% 90%, 90% 100%, 0 100%, 0% 10%);
+    
+    /* UPDATED: Fillet (rounded) corners on all 4 sides */
+    border-radius: 25px; 
+    border: 1px solid var(--border-color);
 }
 
 .image-box {
     width: 100%;
     height: 100%;
     position: relative;
-    background: #000;
 }
 
 .image-box img {
@@ -124,20 +122,23 @@ body {
     transition: opacity 0.4s ease, transform 0.6s ease;
 }
 
-/* REQUIREMENT: Changing descriptions (item-title) to solid black */
+/* UPDATED: Larger, Bold, Black description text */
 .item-title {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 25px 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 30px 20px;
+    
+    /* Font size increased and weight set to Bold */
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 11; 
-    color: #000000 !important; /* Changed from #ffffff to #000000 */
-    text-shadow: none;        /* Removed shadow to keep it clean black */
+    color: #000000 !important; 
+    text-shadow: none;
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
@@ -161,9 +162,9 @@ body {
 .overlay p {
     margin: 0;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.5;
-    max-width: 90%;
+    max-width: 85%;
     font-weight: 400;
 }
 
@@ -187,11 +188,8 @@ footer {
     letter-spacing: 1px;
 }
 
+/* Mobile Adjustments */
 @media (max-width: 600px) {
     .nav-header-main { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
-    
-    /* Ensure corner cut isn't too aggressive on tiny mobile screens */
-    .portfolio-item {
-        clip-path: polygon(5% 0%, 100% 0, 100% 95%, 95% 100%, 0 100%, 0% 5%);
-    }
+    .portfolio-item { border-radius: 15px; } /* Slightly smaller fillet for small screens */
 }
