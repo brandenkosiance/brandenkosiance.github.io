@@ -5,47 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Experience | Branden Kosiance</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        /* PAGE SPECIFIC STYLES */
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc; /* Slightly softer white for reading */
+        }
+
+        /* Centered, Scalable Image */
+        .hero-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            /* Clever scaling: grows with screen but never exceeds 100% */
+            width: clamp(300px, 80vw, 800px); 
+            height: auto;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center; /* Centered title */
+        }
+
+        .project-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .project-body ul {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+
+        .project-body li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* Custom mechanical-looking bullet points */
+        .project-body li::before {
+            content: "■"; 
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        /* The "Data Block" for Role, Location, Tools */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 30px 0;
+            margin-bottom: 60px;
+        }
+
+        .spec-item h4 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .spec-item p {
+            margin: 0;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Footer Navigation Button */
+        .back-btn-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
-                <h1 class="brand">BRANDEN KOSIANCE</h1>
-            </a>
-            <p class="subtitle">Senior Mechanical Engineering Student</p>
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="align-items: center; justify-content: center;">
+            <div class="nav-identity" style="text-align: center;">
+                <h1 class="brand">INTERNSHIP EXPERIENCE</h1>
+            </div>
         </div>
     </nav>
 
-    <main class="project-detail-container">
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
-
-        <div class="project-hero">
-            <img src="motorola-logo.jpg" alt="Motorola Solutions" class="hero-img-contain">
+    <main class="project-content">
+        
+        <div class="hero-image-container">
+            <img src="internship.jpg" alt="Motorola Solutions" class="hero-image">
         </div>
 
-        <section class="project-info">
-            <h2>Internship Experience</h2>
-            <div class="details-grid">
-                <div class="description-column">
-                    <p>During my tenure at Motorola, I was integrated into the mechanical design engineering team where I focused on owning development of numerous mechanical testing fixutres, spearheading testing projects to conduct root cause analyses, and improving product design to drive down cost while improving performance.</p>
-                    <br>
-                    <p>Key responsibilities included CAD modeling of enclosure components, conducting stress analysis on mounting fixtures, and collaborating with cross-functional teams to optimize manufacturing workflows.</p>
-                </div>
-                <div class="specs-column">
-                    <p><strong>Role:</strong> Mechanical Engineering Intern</p>
-                    <p><strong>Location:</strong> [Location]</p>
-                    <p><strong>Tools:</strong> SolidWorks, Ansys, Rapid Prototyping</p>
-                </div>
-            </div>
-        </section>
+        <h2 class="project-title">Motorola Solutions</h2>
 
-        <section class="project-gallery">
-            <img src="intern-1.jpg" alt="Design Phase">
-            <img src="intern-2.jpg" alt="Testing Phase">
-            <img src="intern-3.jpg" alt="Final Assembly">
-        </section>
+        <div class="project-body">
+            <p>During my tenure at Motorola, I was integrated into the mechanical design engineering team where I owned:</p>
+            
+            <ul>
+                <li>Development of mechatronic fixtures for security camera testing</li>
+                <li>Design and execution of extensive testing projects pertaining to root cause analyses</li>
+                <li>Improvement of product design to drive down product cost while optimizing performance</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item">
+                <h4>Role</h4>
+                <p>Mechanical Design Engineer</p>
+            </div>
+            <div class="spec-item">
+                <h4>Location</h4>
+                <p>Vancouver</p>
+            </div>
+            <div class="spec-item">
+                <h4>Tools</h4>
+                <p>SolidWorks, Creo, Jira, Google Suite, Machine Shop Equipment</p>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+
     </main>
 
     <footer>
