@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charging Cart | Branden Kosiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
+
+        /* IMAGE IMPORT LOGIC: No borders, no background boxes */
+        .image-stack { 
+            width: 100%; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            gap: 30px;
+            margin-bottom: 40px; 
+        }
+        
+        .clean-import { 
+            width: 100%; 
+            max-height: 450px; 
+            object-fit: contain; 
+            /* Removed border and background per request */
+            border: none;
+            background: transparent;
+        }
+
+        .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
+        .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
+        .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
+        .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
+
+        .specs-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            border-top: 1px solid #222; 
+            border-bottom: 1px solid #222; 
+            padding: 30px 0; 
+            margin-bottom: 60px; 
+        }
+        
+        .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+        .spec-item p { margin: 0; font-weight: 600; color: #fff; }
+
+        .back-btn-container { text-align: center; padding-bottom: 60px; }
+        .back-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            border: 1px solid #fff; 
+            border-radius: 50px; 
+            color: #fff; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="justify-content: center;">
+            <h1 class="brand">FSAE ACCUMULATOR CHARGING HAND CART</h1>
+        </div>
+    </nav>
+
+    <main class="project-content">
+        <div class="image-stack">
+            <img src="thumb-hv.jpg" class="clean-import" alt="Charging Cart Cover">
+            <img src="uvfr.jpg" class="clean-import" alt="UVFR Team Context">
+        </div>
+
+        <div class="project-body">
+            <p>Took project lead position to design and assemble a hand cart for safe accumulator transportation while also facilitating charging operations.</p>
+            
+            <ul>
+                <li>Designed cart chassis and sourced components for a fully rule-compliant charging cart to safely transport and charge the accumulator.</li>
+                <li>Designed custom electronic enclosure to house specified electronics for the facilitation of controllable charging.</li>
+                <li>Programmed script in Python to integrate controllable charging, HMI for user input, and safety stops.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>Project Lead</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks PDM, Microsoft Office</p></div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Branden Kosiance</p>
+    </footer>
+</body>
+</html>
