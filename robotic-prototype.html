@@ -3,173 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Robotic Prototype | Branden Kosiance</title>
+    <title>Autonomous Robot | Branden Kosiance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="headshot.jpg">
     <style>
-        /* PAGE SPECIFIC STYLES */
-        .project-content {
-            max-width: 800px;
-            margin: 0 auto;
-            color: #ccc; 
+        .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
+
+        .hero-container { width: 100%; display: flex; justify-content: center; margin-bottom: 40px; }
+        .hero-image { 
+            width: 100%; 
+            max-height: 400px; /* CONSTRAINED SIZE */
+            object-fit: contain; 
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid #222;
         }
 
-        /* Standard Centered Image Container */
-        .hero-image-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-        
-        /* Extra margin for mid-text images */
-        .mid-text-image {
-            margin-top: 40px;
-            margin-bottom: 40px;
+        .mid-image { 
+            width: 70%; /* SMALLER MID-TEXT IMAGE */
+            max-height: 300px; 
+            margin: 40px auto; 
+            display: block;
+            border-radius: 12px;
+            border: 1px solid #222;
         }
 
-        .hero-image {
-            width: clamp(300px, 80vw, 800px); 
-            height: auto;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            object-fit: cover;
-        }
+        .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
+        .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
+        .project-body li { position: relative; padding-left: 25px; margin-bottom: 12px; }
+        .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
 
-        /* Text Styles */
-        .project-body {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; border-top: 1px solid #222; border-bottom: 1px solid #222; padding: 30px 0; margin-bottom: 60px; }
+        .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+        .spec-item p { margin: 0; font-weight: 600; color: #fff; }
 
-        .project-body ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-bottom: 40px;
-        }
-
-        .project-body li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-
-        /* Custom Bullet Styling */
-        .project-body li::before {
-            content: "■"; 
-            position: absolute;
-            left: 0;
-            color: #fff;
-            font-size: 0.8rem;
-            top: 2px;
-        }
-
-        /* Specs Grid */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 30px 0;
-            margin-bottom: 60px;
-        }
-
-        .spec-item h4 {
-            color: #fff;
-            margin: 0 0 5px 0;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.7;
-        }
-
-        .spec-item p {
-            margin: 0;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        /* Footer Link */
-        .back-btn-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid #fff;
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background-color: #fff;
-            color: #000;
-        }
+        .back-btn-container { text-align: center; }
+        .back-btn { display: inline-block; padding: 12px 30px; border: 1px solid #fff; border-radius: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-
     <nav class="portfolio-nav">
-        <div class="nav-header-main" style="align-items: center; justify-content: center;">
-            <div class="nav-identity" style="text-align: center;">
-                <h1 class="brand">AUTONOMOUS ROBOTIC PROTOTYPE</h1>
-            </div>
+        <div class="nav-header-main" style="justify-content: center;">
+            <h1 class="brand">AUTONOMOUS ROBOTIC PROTOTYPE</h1>
         </div>
     </nav>
-
     <main class="project-content">
-        
-        <div class="hero-image-container">
-            <img src="oceannetworks.png" alt="Ocean Networks Robot" class="hero-image">
+        <div class="hero-container">
+            <img src="oceannetworks.png" class="hero-image">
         </div>
-
         <div class="project-body">
             <p>Designed and assembled a mechatronic autonomous robotic prototype intended to simulate an underwater camera cleaning robot.</p>
             
-            <div class="hero-image-container mid-text-image">
-                <img src="robot2.jpg" alt="Robot Prototype Detail" class="hero-image">
-            </div>
+            <img src="robot2.jpg" class="mid-image">
 
             <ul>
-                <li>Designed chassis and drive train to achieve simple yet effective system movement.</li>
+                <li>Designed chassis and drive train to achieve simple yet effective movement.</li>
                 <li>Integrated sensors and C-based programming to facilitate autonomous movement.</li>
                 <li>Optimized design to achieve 100% on final performance evaluations.</li>
             </ul>
         </div>
-
         <div class="specs-grid">
-            <div class="spec-item">
-                <h4>Role</h4>
-                <p>Mechanical Design Engineer</p>
-            </div>
-            <div class="spec-item">
-                <h4>Location</h4>
-                <p>Victoria</p>
-            </div>
-            <div class="spec-item">
-                <h4>Tools</h4>
-                <p>SolidWorks, VEX Robot Kit, ROBOT C, Microsoft Office</p>
-            </div>
+            <div class="spec-item"><h4>Role</h4><p>Mechanical Design Engineer</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks, VEX Kit, Robot C</p></div>
         </div>
-
-        <div class="back-btn-container">
-            <a href="index.html" class="back-btn">Return to Portfolio</a>
-        </div>
-
+        <div class="back-btn-container"><a href="index.html" class="back-btn">Return to Portfolio</a></div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Branden Kosiance</p>
-    </footer>
-
 </body>
 </html>
