@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="headshot.jpg">
     <style>
-        /* PAGE SPECIFIC STYLES (Same as template) */
+        /* PAGE SPECIFIC STYLES */
         .project-content {
             max-width: 800px;
             margin: 0 auto;
             color: #ccc; 
         }
 
-        /* Centered, Scalable Image Container */
+        /* Standard Centered Image Container */
         .hero-image-container {
             width: 100%;
             display: flex;
@@ -22,11 +22,28 @@
             margin-bottom: 40px;
         }
 
-        /* Extra margin for images inserted mid-text */
-        .mid-text-image {
-            margin-top: 20px;
+        /* --- NEW: Clever Frame for logos with black elements --- */
+        /* Gives a subtle lighter background and depth so black pops without a white box */
+        .hero-logo-frame {
+            background-color: #111111; /* Subtle step up from pure black */
+            padding: 30px; /* Breathing room */
+            border-radius: 25px;
+            border: 1px solid #2a2a2a; /* Slight highlight */
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Industrial inset look */
+            display: flex;
+            justify-content: center;
             margin-bottom: 40px;
         }
+
+        .hero-logo-frame .hero-image {
+            border: none; /* Remove default border inside the frame */
+            box-shadow: none;
+            margin-bottom: 0;
+            max-height: 300px; /* Ensure banner logos don't get too tall */
+            width: auto; /* Allow width to adjust based on height limit */
+            max-width: 100%;
+        }
+        /* -------------------------------------------------- */
 
         .hero-image {
             width: clamp(300px, 80vw, 800px); 
@@ -35,6 +52,31 @@
             border: 1px solid var(--border-color);
             object-fit: cover;
         }
+
+        /* --- NEW: Triple Side-by-Side Image Row --- */
+        .image-row-triple {
+            display: flex;
+            gap: 20px;
+            margin: 50px 0; /* Spacing from surrounding text */
+            flex-wrap: wrap; /* Essential for mobile scaling to stack */
+            justify-content: center;
+        }
+
+        .image-row-triple img {
+            flex: 1 1 250px; /* Grow, shrink, base width of 250px */
+            height: auto;
+            aspect-ratio: 4/3; /* Forces uniform shape for neat row */
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Subtle hover effect for interaction */
+        .image-row-triple img:hover {
+             transform: scale(1.03);
+        }
+        /* -------------------------------------------------- */
 
         .project-title {
             font-size: clamp(1.8rem, 4vw, 2.5rem);
@@ -134,7 +176,7 @@
 
     <main class="project-content">
         
-        <div class="hero-image-container">
+        <div class="hero-logo-frame">
             <img src="makesens.jpg" alt="MakeSens System Overview" class="hero-image">
         </div>
 
@@ -143,8 +185,10 @@
         <div class="project-body">
             <p>Senior capstone design project in which I designed a small-scale powder classification system to target and classify a range of particle sizes in order to create a higher powder uniformity for battery anode coating materials, to ultimately increase battery performance.</p>
             
-            <div class="hero-image-container mid-text-image">
-                <img src="classifier.jpg" alt="Classifier CAD Model" class="hero-image">
+            <div class="image-row-triple">
+                <img src="classifier.jpg" alt="Classifier CAD Model">
+                <img src="simulation.jpg" alt="CFD Simulation Results">
+                <img src="thumb-powder.jpg" alt="System Prototype">
             </div>
 
             <p><strong>Deliverables include:</strong></p>
