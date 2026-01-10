@@ -120,7 +120,13 @@
     <footer>
         <p>&copy; 2026 Branden Kosiance</p>
     </footer>
-
+<script>
+    // FIX: Forces page to be visible when using the Back Button
+    window.addEventListener('pageshow', function(event) {
+        document.body.style.opacity = "1";
+        document.body.style.visibility = "visible";
+    });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
