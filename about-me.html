@@ -3,71 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battery Cooling Testing | Branden Kosiance</title>
+    <title>About Me | Branden Kosiance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="headshot.jpg">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* LOGO & HERO: Sole item import logic */
+        /* IMAGE LOGIC: Clean, centered, scalable, no borders */
         .image-stack { 
             width: 100%; 
             display: flex; 
             flex-direction: column;
             align-items: center; 
-            gap: 20px;
+            gap: 30px;
             margin-bottom: 40px; 
         }
         
         .clean-import { 
             width: 100%; 
-            max-height: 400px; 
+            max-height: 500px; /* Slightly taller for portrait/about images */
             object-fit: contain; 
             border: none;
             background: transparent;
-        }
-
-        /* RESPONSIVE TRIPLE GRID */
-        .cooling-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
-            margin: 40px 0;
-        }
-
-        .grid-item {
-            width: 100%;
-            aspect-ratio: 4/3;
-            overflow: hidden;
             border-radius: 12px;
-            border: 1px solid #222;
         }
 
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        /* TEXT STYLES */
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
+        .project-body p { margin-bottom: 25px; } /* Spacing between paragraphs */
+        
         .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
         .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
         .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
 
-        .specs-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-            border-top: 1px solid #222; 
-            border-bottom: 1px solid #222; 
-            padding: 30px 0; 
-            margin-bottom: 60px; 
+        /* SECTION DIVIDER for VibeCast */
+        .secondary-section {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid #333; /* Subtle separation line */
         }
-        
-        .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
-        .spec-item p { margin: 0; font-weight: 600; color: #fff; }
 
-        .back-btn-container { text-align: center; padding-bottom: 60px; }
+        .project-title { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            color: #fff; 
+            text-align: center; 
+            text-transform: uppercase; 
+            margin-bottom: 30px; 
+            letter-spacing: 2px;
+        }
+
+        .back-btn-container { text-align: center; padding-bottom: 60px; margin-top: 60px;}
         .back-btn { 
             display: inline-block; 
             padding: 12px 30px; 
@@ -85,36 +71,41 @@
 <body>
     <nav class="portfolio-nav">
         <div class="nav-header-main" style="justify-content: center;">
-            <h1 class="brand">FSAE BATTERY SEGMENT COOLING TESTING</h1>
+            <h1 class="brand">ABOUT ME</h1>
         </div>
     </nav>
 
     <main class="project-content">
+        
         <div class="image-stack">
-            <img src="uvfr.jpg" class="clean-import" alt="UVFR Logo">
+            <img src="thumb-about.jpg" class="clean-import" alt="Branden Kosiance">
         </div>
 
         <div class="project-body">
-            <p>Designed, fabricated, and executed testing projects on battery pack segments to evaluate heat dissipation effects and required cooling power.</p>
+            <p>I am a senior Mechanical Engineering student currently attending the University of Victoria. I have 1+ year of applicable internship design experience proving my abilities to design and test complex mechanical and electrical systems in professional settings.</p>
             
-            <div class="cooling-grid">
-                <div class="grid-item"><img src="batterycooling1.jpg" alt="Cooling Test Setup 1"></div>
-                <div class="grid-item"><img src="batterycooling2.jpg" alt="Cooling Test Setup 2"></div>
-                <div class="grid-item"><img src="batterycooling3.jpg" alt="Cooling Test Setup 3"></div>
-            </div>
+            <p>Specifically, I have worked as a MDE intern at Motorola, where I gained advanced skills designing fixtures and conducting testing projects on optical systems. Beyond this, I have 8+ months of experience in technical, extracurricular club work, where I have obtained experience in rigorous mechanical system design and testing, as well as research experience in sustainable energy solutions. I also volunteered for 2+ months assembling mechanical prosthetic hands for individuals in need. Through my technical coursework, I have gained hands-on experience in mechanical design, analysis, and validation over the span of 5+ years.</p>
 
-            <ul>
-                <li>Designed and laser cut components to create mock battery segments with representative cell modules.</li>
-                <li>Utilized thermocouples to obtain heat transfer in aluminum slug cells to receive temperature data, allowing for calculation of the heat transfer coefficient.</li>
-                <li><strong>Calculated required volumetric flow rates and static pressure requirements to specify fan power, ensuring the thermal system could maintain cell temperatures below the 60°C critical threshold during peak discharge cycles.</strong></li>
-                <li>Compiled results and documented findings to share through design review meetings, influencing the final battery pack cooling architecture.</li>
-            </ul>
+            <p>Through multiple high-complexity design projects, I guided designs from conceptual development to final verification, strengthening my ability to scope, design, and iterate hardware solutions. I have taken leadership roles in numerous large-scale technical projects showcasing my ability to work independently and drive a team toward high-quality work output efficiently.</p>
         </div>
 
-        <div class="specs-grid">
-            <div class="spec-item"><h4>Role</h4><p>Mechanical Design Engineer</p></div>
-            <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
-            <div class="spec-item"><h4>Tools</h4><p>SolidWorks, Lasercutter, Thermocouples, Microsoft Office</p></div>
+        <div class="secondary-section">
+            <h2 class="project-title">VibeCast Media Management Agency</h2>
+
+            <div class="image-stack">
+                <img src="vibecast.jpg" class="clean-import" alt="VibeCast Media">
+            </div>
+
+            <div class="project-body">
+                <p>Personal endeavor I created from my passion in personal growth and entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands.</p>
+                
+                <p><strong>I have:</strong></p>
+                <ul>
+                    <li>Grossed five figures in < 6 months.</li>
+                    <li>Connected viral influencers with some of the most prestigious brands in the country.</li>
+                    <li>Led a team of 5+ people to drive business growth through internal and external avenues.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="back-btn-container">
