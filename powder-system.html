@@ -9,25 +9,44 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
+        /* THE LOGO BOX: Sized white box with cropped/rounded corners */
+        .logo-plaque {
+            width: fit-content;
+            margin: 40px auto;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-radius: 12px; /* Consistent corner cropping */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .logo-plaque img {
+            max-width: 200px; /* Kept small and professional */
+            height: auto;
+            display: block;
+        }
+
         /* IMAGE LAYOUT LOGIC */
         .img-container {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 12px; /* Consistent corner cropping */
             overflow: hidden;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
+            border: 1px solid #222;
+            background: #000;
         }
 
-        /* Featured Main Image (thumb-powder) */
+        /* Classifier Image Fix: object-fit contain + corner cropping */
         .large-feature { 
             width: 100%;
             max-height: 450px; 
             object-fit: contain; 
-            background: #000;
+            display: block;
         }
 
-        /* Two images side-by-side (Classifier and Simulation) */
+        /* Two images side-by-side */
         .double-row-images {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -35,12 +54,18 @@
             margin-bottom: 40px;
         }
 
-        .sub-img {
+        .sub-img-container {
             width: 100%;
-            height: 320px; /* Uniform height for the side-by-side row */
-            object-fit: cover;
-            border-radius: 12px;
+            height: 320px;
+            border-radius: 12px; /* Consistent corner cropping */
+            overflow: hidden;
             border: 1px solid #222;
+        }
+
+        .sub-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-title { font-size: 2.2rem; font-weight: 800; color: #fff; text-align: center; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
@@ -60,7 +85,7 @@
 
         @media (max-width: 600px) {
             .double-row-images { grid-template-columns: 1fr; }
-            .sub-img { height: auto; }
+            .sub-img-container { height: auto; }
             .project-title { font-size: 1.6rem; }
         }
     </style>
@@ -73,7 +98,7 @@
     </nav>
 
     <main class="project-content">
-        <div class="logo-only-container">
+        <div class="logo-plaque">
             <img src="makesens.png" alt="MakeSens Logo">
         </div>
 
@@ -83,12 +108,16 @@
             <p>Senior capstone design project in which I designed a small-scale powder classification system to target and classify a range of particle sizes in order to create a higher powder uniformity for battery anode coating materials, to ultimately increase battery performance.</p>
             
             <div class="img-container">
-                <img src="thumb-powder.jpg" class="large-feature" alt="Powder Prototype Cover">
+                <img src="thumb-powder.png" class="large-feature" alt="Powder Prototype Cover">
             </div>
 
             <div class="double-row-images">
-                <img src="classifier.jpg" class="sub-img" alt="Classifier Design">
-                <img src="simulation.jpg" class="sub-img" alt="Flow Simulation">
+                <div class="sub-img-container">
+                    <img src="classifier.jpg" alt="Classifier Design">
+                </div>
+                <div class="sub-img-container">
+                    <img src="simulation.jpg" alt="Flow Simulation">
+                </div>
             </div>
 
             <p><strong>Deliverables include:</strong></p>
