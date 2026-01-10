@@ -9,30 +9,39 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* FIXED LOGO BANNER: Brushed Metal Style for Black Logo visibility */
-        .logo-banner {
+        /* LOGO: Inverted to white for visibility on black background */
+        .logo-only-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 50px 0;
-            background: linear-gradient(145deg, #e6e6e6, #ffffff);
-            border-radius: 15px;
-            margin-bottom: 50px;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 40px 0;
+            background: transparent;
         }
-        .logo-banner img { 
-            max-width: 320px; 
-            height: auto; 
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+        .logo-only-container img {
+            max-width: 280px;
+            height: auto;
+            filter: invert(1) brightness(2);
         }
 
         /* IMAGE LAYOUT LOGIC */
-        .single-row-image {
+        .img-container {
             width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
 
+        /* Featured Main Image (thumb-powder) */
+        .large-feature { 
+            width: 100%;
+            max-height: 450px; 
+            object-fit: contain; 
+            background: #000;
+        }
+
+        /* Two images side-by-side (Classifier and Simulation) */
         .double-row-images {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -40,23 +49,13 @@
             margin-bottom: 40px;
         }
 
-        .img-container {
+        .sub-img {
             width: 100%;
+            height: 320px; /* Uniform height for the side-by-side row */
+            object-fit: cover;
             border-radius: 12px;
             border: 1px solid #222;
-            overflow: hidden;
-            background: #111;
         }
-
-        .img-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* Constraining the large single image so it doesn't blow out */
-        .large-feature { max-height: 450px; object-fit: contain; }
 
         .project-title { font-size: 2.2rem; font-weight: 800; color: #fff; text-align: center; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
         .project-body { font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
@@ -75,6 +74,7 @@
 
         @media (max-width: 600px) {
             .double-row-images { grid-template-columns: 1fr; }
+            .sub-img { height: auto; }
             .project-title { font-size: 1.6rem; }
         }
     </style>
@@ -87,7 +87,7 @@
     </nav>
 
     <main class="project-content">
-        <div class="logo-banner">
+        <div class="logo-only-container">
             <img src="makesens.jpg" alt="MakeSens Logo">
         </div>
 
@@ -96,17 +96,13 @@
         <div class="project-body">
             <p>Senior capstone design project in which I designed a small-scale powder classification system to target and classify a range of particle sizes in order to create a higher powder uniformity for battery anode coating materials, to ultimately increase battery performance.</p>
             
-            <div class="img-container single-row-image">
-                <img src="classifier.jpg" class="large-feature" alt="Classifier Design">
+            <div class="img-container">
+                <img src="thumb-powder.png" class="large-feature" alt="Powder Prototype Cover">
             </div>
 
             <div class="double-row-images">
-                <div class="img-container">
-                    <img src="simulation.jpg" alt="Flow Simulation">
-                </div>
-                <div class="img-container">
-                    <img src="thumb-powder.png" alt="Powder Prototype">
-                </div>
+                <img src="classifier.jpg" class="sub-img" alt="Classifier Design">
+                <img src="simulation.jpg" class="sub-img" alt="Flow Simulation">
             </div>
 
             <p><strong>Deliverables include:</strong></p>
@@ -134,12 +130,10 @@
     </footer>
 
     <script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-    
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
