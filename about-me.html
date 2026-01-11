@@ -9,7 +9,7 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* IMAGE LOGIC: Clean, centered, scalable, no borders */
+        /* IMAGE LOGIC */
         .image-stack { 
             width: 100%; 
             display: flex; 
@@ -21,16 +21,24 @@
         
         .clean-import { 
             width: 100%; 
-            max-height: 500px; /* Slightly taller for portrait/about images */
+            max-height: 500px; 
             object-fit: contain; 
             border: none;
             background: transparent;
             border-radius: 12px;
         }
 
+        /* NEW CLASS: Constrains the VibeCast logo size */
+        .secondary-logo {
+            max-width: 180px; 
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
         /* TEXT STYLES */
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
-        .project-body p { margin-bottom: 25px; } /* Spacing between paragraphs */
+        .project-body p { margin-bottom: 25px; } 
         
         .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
         .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
@@ -40,7 +48,7 @@
         .secondary-section {
             margin-top: 80px;
             padding-top: 60px;
-            border-top: 1px solid #333; /* Subtle separation line */
+            border-top: 1px solid #333; 
         }
 
         .project-title { 
@@ -82,15 +90,15 @@
         </div>
 
         <div class="project-body">
-            <p>I am a senior Mechanical Engineering student currently attending the University of Victoria. My background consists of:
+            <p>I am a senior Mechanical Engineering student currently attending the University of Victoria. My background consists of:</p>
 
-                <ul>
+            <ul>
                 <li>5+ years of extensive technical academic coursework.</li>
                 <li>1+ years of professional internship experience in various industries.</li>
                 <li>7+ months of extracurricular, hands-on design in UVic FSAE Formula Racing Club.</li>
                 <li>4+ months of mechanical design experience in UVic Renewable Energy Club.</li>
                 <li>4+ months of volunteering work with Victoria Hand Project assembling prosthetics.</li>
-                </ul>
+            </ul>
           
             <p>I have taken leadership roles in numerous large-scale technical projects showcasing my ability to work independently and drive a team toward high-quality work output efficiently.</p>
         </div>
@@ -99,17 +107,17 @@
             <h2 class="project-title">VibeCast Media Management Agency</h2>
 
             <div class="image-stack">
-                <img src="vibe.png" class="clean-import" alt="VibeCast Media">
+                <img src="vibe.png" class="secondary-logo" alt="VibeCast Media">
             </div>
 
             <div class="project-body">
-                <p>Personal endeavor I created from my passion in personal growth and entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands.</p>
+                <p>Company I created from my passion entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands.</p>
                 
                 <p><strong>I have:</strong></p>
                 <ul>
-                    <li>Grossed five figures in < 6 months.</li>
-                    <li>Connected viral influencers with some of the most prestigious brands in the country.</li>
-                    <li>Led a team of 5+ people to drive business growth through internal and external avenues.</li>
+                    <li>Grossed five figures in &lt; 6 months.</li>
+                    <li>Connected viral influencers with some of the largest brands in the country.</li>
+                    <li>Employed team of 5+ people to drive business growth through internal and external avenues.</li>
                 </ul>
             </div>
         </div>
@@ -122,13 +130,13 @@
     <footer>
         <p>&copy; 2026 Branden Kosiance</p>
     </footer>
-<script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
     
 </body>
 </html>
