@@ -28,6 +28,14 @@
             border: 1px solid #222;
         }
 
+        /* NEW CLASS: Constrains the UVF logo size */
+        .secondary-logo {
+            max-width: 150px; /* Much smaller width */
+            height: auto;
+            object-fit: contain;
+            margin-top: 10px;
+        }
+
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
         .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
         .project-body li { position: relative; padding-left: 25px; margin-bottom: 12px; }
@@ -46,7 +54,7 @@
         .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
         .spec-item p { margin: 0; font-weight: 600; color: #fff; }
 
-        .back-btn-container { text-align: center; }
+        .back-btn-container { text-align: center; margin-bottom: 60px; }
         .back-btn { 
             display: inline-block; 
             padding: 12px 30px; 
@@ -71,7 +79,7 @@
     <main class="project-content">
         <div class="hero-container">
             <img src="thumb-hv.jpg" class="hero-image" alt="HV Junction Box Cover">
-            <img src="uvfr.png" class="hero-image" alt="UVFR Team Context">
+            <img src="uvfr.png" class="secondary-logo" alt="UVFR Team Context">
         </div>
 
         <div class="project-body">
@@ -104,13 +112,11 @@
         <p>&copy; 2026 Branden Kosiance</p>
     </footer>
 
-<script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-    
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
