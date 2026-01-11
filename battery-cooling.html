@@ -9,7 +9,7 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* LOGO: Constrained UVFR logo to match other pages */
+        /* LOGO: Constrained UVFR logo */
         .image-stack { 
             width: 100%; 
             display: flex; 
@@ -26,17 +26,17 @@
             background: transparent;
         }
 
-        /* NEW LAYOUT: 2 images on top, 1 full-width on bottom */
+        /* GRID: Wider boxes for the top row to prevent cropping */
         .cooling-grid-top {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr 1fr; /* Two equal wide columns */
+            gap: 20px;
             margin-top: 40px;
         }
 
         .cooling-grid-bottom {
             width: 100%;
-            margin-top: 15px;
+            margin-top: 20px;
             margin-bottom: 40px;
         }
 
@@ -45,23 +45,27 @@
             overflow: hidden;
             border-radius: 12px;
             border: 1px solid #222;
+            background: #000; /* Black background for any empty space in the box */
         }
 
-        /* Fixed aspect ratio for top row to ensure alignment */
-        .top-row-item { aspect-ratio: 4/3; }
+        /* TOP ROW: Increased width/aspect ratio to 16/9 for a wider view */
+        .top-row-item { 
+            aspect-ratio: 16 / 9; 
+        }
 
         .grid-item img {
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
+            /* CHANGED TO CONTAIN: This ensures the full image is visible without being cut off */
+            object-fit: contain; 
         }
 
-        /* Bottom image stays large but constrained in height */
+        /* Bottom image stays large */
         .bottom-img {
-            max-height: 450px;
+            max-height: 500px;
+            width: 100%;
             object-fit: contain;
-            background: #000;
         }
 
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
@@ -96,7 +100,7 @@
         }
         .back-btn:hover { background: #fff; color: #000; }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             .cooling-grid-top { grid-template-columns: 1fr; }
         }
     </style>
