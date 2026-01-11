@@ -11,24 +11,22 @@
         .project-content {
             max-width: 800px;
             margin: 0 auto;
-            color: #ccc; /* Slightly softer white for reading */
+            color: #ccc;
         }
 
-        /* Centered, Scalable Image */
+        /* Centered Logo Logic */
         .hero-image-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            margin-top: 40px;
         }
 
         .hero-image {
-            /* Clever scaling: grows with screen but never exceeds 100% */
-            width: clamp(300px, 80vw, 800px); 
+            max-width: 200px; /* Constrained for logo quality */
             height: auto;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .project-title {
@@ -38,7 +36,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-align: center; /* Centered title */
+            text-align: center;
         }
 
         .project-body {
@@ -48,7 +46,7 @@
         }
 
         .project-body ul {
-            list-style-type: none; /* Remove default bullets */
+            list-style-type: none;
             padding-left: 0;
             margin-bottom: 40px;
         }
@@ -59,7 +57,6 @@
             margin-bottom: 15px;
         }
 
-        /* Custom mechanical-looking bullet points */
         .project-body li::before {
             content: "■"; 
             position: absolute;
@@ -69,13 +66,12 @@
             top: 2px;
         }
 
-        /* The "Data Block" for Role, Location, Tools */
         .specs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
             padding: 30px 0;
             margin-bottom: 60px;
         }
@@ -95,10 +91,10 @@
             color: #fff;
         }
 
-        /* Footer Navigation Button */
         .back-btn-container {
             text-align: center;
             margin-top: 50px;
+            margin-bottom: 80px;
         }
 
         .back-btn {
@@ -117,6 +113,12 @@
         .back-btn:hover {
             background-color: #fff;
             color: #000;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #222;
+            margin: 80px 0;
         }
     </style>
 </head>
@@ -140,7 +142,6 @@
 
         <div class="project-body">
             <p>During my tenure at Motorola, I have integrated into the mechanical design engineering team where I own:</p>
-            
             <ul>
                 <li>Development of mechatronic fixtures for security camera testing</li>
                 <li>Design and execution of extensive testing projects pertaining to root cause analyses</li>
@@ -149,18 +150,51 @@
         </div>
 
         <div class="specs-grid">
-            <div class="spec-item">
-                <h4>Role</h4>
-                <p>Mechanical Design Engineer</p>
-            </div>
-            <div class="spec-item">
-                <h4>Location</h4>
-                <p>Vancouver</p>
-            </div>
-            <div class="spec-item">
-                <h4>Tools</h4>
-                <p>SolidWorks, Creo, Jira, Google Suite, Machine Shop Equipment</p>
-            </div>
+            <div class="spec-item"><h4>Role</h4><p>Mechanical Design Engineer</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Vancouver</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks, Creo, Jira, Google Suite, Machine Shop Equipment</p></div>
+        </div>
+
+        <hr>
+
+        <div class="hero-image-container">
+            <img src="COR.png" alt="City of Richmond" class="hero-image">
+        </div>
+
+        <h2 class="project-title">City of Richmond</h2>
+
+        <div class="project-body">
+            <p>Integrated into program management role, managing large scale city improvement programs:</p>
+            <ul>
+                <li>Progressed and finalized E-scooter pilot program into city, reviewing proponent applications to choose contract winner to provide zero emission transportation for the entire city.</li>
+                <li>Progressed local residential developments; reviewed development application, servicing agreements, and met with stakeholders to communicate results.</li>
+                <li>Utilized AutoCAD to review residential designs and provide markups to contractors.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>TPM</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Richmond</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>AutoCAD, Microsoft Tools</p></div>
+        </div>
+
+        <hr>
+
+        <h2 class="project-title" style="margin-top: 60px;">VMAC</h2>
+
+        <div class="project-body">
+            <p>Mechanical engineering internship focused on product testing and design optimization:</p>
+            <ul>
+                <li>Executed extensive testing projects on air compressor systems to advance field failure investigations.</li>
+                <li>Provided design improvement recommendations to improve product performance.</li>
+                <li>Used SolidWorks to design and 3D-print fixtures for testing project objectives.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>Mechanical Engineering Intern</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Nanaimo</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks, DAQFactory, Power Tools, Raise 3D-printer, sensors, Microsoft Office</p></div>
         </div>
 
         <div class="back-btn-container">
@@ -174,13 +208,10 @@
     </footer>
 
     <script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-
-    
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
