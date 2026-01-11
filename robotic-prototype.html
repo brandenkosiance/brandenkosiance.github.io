@@ -9,23 +9,38 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        .hero-container { width: 100%; display: flex; justify-content: center; margin-bottom: 40px; }
-        .hero-image { 
+        /* HEADER IMAGE: Clean, no box, natural size to prevent pixelation */
+        .header-logo-container { 
             width: 100%; 
-            max-height: 400px; /* CONSTRAINED SIZE */
+            display: flex; 
+            justify-content: center; 
+            margin-bottom: 40px; 
+            margin-top: 20px;
+        }
+        .header-logo { 
+            max-width: 100%; 
+            height: auto; 
+            /* Ensures it doesn't stretch beyond its native quality */
+            width: auto; 
+            max-height: 150px; 
             object-fit: contain; 
-            border-radius: 12px;
-            background: #000;
-            border: 1px solid #222;
         }
 
-        .mid-image { 
-            width: 70%; /* SMALLER MID-TEXT IMAGE */
-            max-height: 300px; 
+        /* ROBOT IMAGE: Boxed properly, maintains aspect ratio */
+        .robot-container { 
+            width: 100%;
+            max-width: 600px; /* Limits width for a cleaner look */
             margin: 40px auto; 
-            display: block;
-            border-radius: 12px;
             border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .robot-img { 
+            width: 100%; 
+            height: auto; /* CRITICAL: Allows height to adjust based on width, preventing squashing */
+            display: block;
         }
 
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
@@ -37,24 +52,32 @@
         .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
         .spec-item p { margin: 0; font-weight: 600; color: #fff; }
 
-        .back-btn-container { text-align: center; }
-        .back-btn { display: inline-block; padding: 12px 30px; border: 1px solid #fff; border-radius: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
+        .back-btn-container { text-align: center; margin-bottom: 60px;}
+        .back-btn { display: inline-block; padding: 12px 30px; border: 1px solid #fff; border-radius: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s;}
+        .back-btn:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
     <nav class="portfolio-nav">
         <div class="nav-header-main" style="justify-content: center;">
-            <h1 class="brand">AUTONOMOUS ROBOTIC PROTOTYPE</h1>
+            <h1 class="brand">AUTONOMOUS ROBOTIC PROTOTYPE 
+
+[Image of autonomous underwater robot]
+</h1>
         </div>
     </nav>
+
     <main class="project-content">
-        <div class="hero-container">
-            <img src="oceannetworks.jpg" class="hero-image">
+        <div class="header-logo-container">
+            <img src="oceannetworks.jpg" class="header-logo" alt="Ocean Networks Canada">
         </div>
+
         <div class="project-body">
             <p>Designed and assembled a mechatronic autonomous robotic prototype intended to simulate an underwater camera cleaning robot.</p>
             
-            <img src="thumb-robot.jpg" class="mid-image">
+            <div class="robot-container">
+                <img src="thumb-robot.jpg" class="robot-img" alt="Robot Prototype">
+            </div>
 
             <ul>
                 <li>Designed chassis and drive train to achieve simple yet effective movement.</li>
@@ -62,26 +85,28 @@
                 <li>Optimized design to achieve 100% on final performance evaluations.</li>
             </ul>
         </div>
+
         <div class="specs-grid">
             <div class="spec-item"><h4>Role</h4><p>Mechanical Design Engineer</p></div>
             <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
             <div class="spec-item"><h4>Tools</h4><p>SolidWorks, VEX Kit, Robot C</p></div>
         </div>
-        <div class="back-btn-container"><a href="index.html" class="back-btn">Return to Portfolio</a></div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
     </main>
 
-<footer>
+    <footer>
         <p>&copy; 2026 Branden Kosiance</p>
     </footer>
     
-<script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-
-    
+    <script>
+        // FIX: Forces page to be visible when using the Back Button
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
