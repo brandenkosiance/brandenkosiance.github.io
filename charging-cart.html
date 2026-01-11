@@ -23,9 +23,16 @@
             width: 100%; 
             max-height: 450px; 
             object-fit: contain; 
-            /* Removed border and background per request */
             border: none;
             background: transparent;
+        }
+
+        /* NEW CLASS: Specifically for the UVFR logo to keep it small */
+        .secondary-logo {
+            max-width: 150px; 
+            height: auto;
+            object-fit: contain;
+            margin-top: -10px; /* Pulls it slightly closer to the main image */
         }
 
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
@@ -71,7 +78,7 @@
     <main class="project-content">
         <div class="image-stack">
             <img src="thumb-charging.jpg" class="clean-import" alt="Charging Cart Cover">
-            <img src="uvfr.png" class="clean-import" alt="UVFR Team Context">
+            <img src="uvfr.png" class="secondary-logo" alt="UVFR Team Context">
         </div>
 
         <div class="project-body">
@@ -100,12 +107,10 @@
     </footer>
 
     <script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-    
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
