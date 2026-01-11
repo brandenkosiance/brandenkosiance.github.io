@@ -9,44 +9,59 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* LOGO & HERO: Sole item import logic */
+        /* LOGO: Constrained UVFR logo to match other pages */
         .image-stack { 
             width: 100%; 
             display: flex; 
             flex-direction: column;
             align-items: center; 
-            gap: 20px;
             margin-bottom: 40px; 
         }
         
-        .clean-import { 
-            width: 100%; 
-            max-height: 400px; 
-            object-fit: contain; 
+        .secondary-logo {
+            max-width: 150px; 
+            height: auto;
+            object-fit: contain;
             border: none;
             background: transparent;
         }
 
-        /* RESPONSIVE TRIPLE GRID */
-        .cooling-grid {
+        /* NEW LAYOUT: 2 images on top, 1 full-width on bottom */
+        .cooling-grid-top {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin: 40px 0;
+            margin-top: 40px;
+        }
+
+        .cooling-grid-bottom {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 40px;
         }
 
         .grid-item {
             width: 100%;
-            aspect-ratio: 4/3;
             overflow: hidden;
             border-radius: 12px;
             border: 1px solid #222;
         }
 
+        /* Fixed aspect ratio for top row to ensure alignment */
+        .top-row-item { aspect-ratio: 4/3; }
+
         .grid-item img {
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
+        }
+
+        /* Bottom image stays large but constrained in height */
+        .bottom-img {
+            max-height: 450px;
+            object-fit: contain;
+            background: #000;
         }
 
         .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
@@ -80,6 +95,10 @@
             transition: 0.3s;
         }
         .back-btn:hover { background: #fff; color: #000; }
+
+        @media (max-width: 600px) {
+            .cooling-grid-top { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -91,16 +110,21 @@
 
     <main class="project-content">
         <div class="image-stack">
-            <img src="uvfr.png" class="clean-import" alt="UVFR Logo">
+            <img src="uvfr.png" class="secondary-logo" alt="UVFR Logo">
         </div>
 
         <div class="project-body">
             <p>Designed, fabricated, and executed testing projects on battery pack segments to evaluate heat dissipation effects and required cooling power.</p>
             
-            <div class="cooling-grid">
-                <div class="grid-item"><img src="batterycooling1.jpg" alt="Cooling Test Setup 1"></div>
-                <div class="grid-item"><img src="batterycooling2.jpg" alt="Cooling Test Setup 2"></div>
-                <div class="grid-item"><img src="batterycooling3.jpg" alt="Cooling Test Setup 3"></div>
+            <div class="cooling-grid-top">
+                <div class="grid-item top-row-item"><img src="batterycooling1.jpg" alt="Cooling Test Setup 1"></div>
+                <div class="grid-item top-row-item"><img src="batterycooling2.jpg" alt="Cooling Test Setup 2"></div>
+            </div>
+
+            <div class="cooling-grid-bottom">
+                <div class="grid-item">
+                    <img src="batterycooling3.jpg" class="bottom-img" alt="Cooling Test Setup 3">
+                </div>
             </div>
 
             <ul>
@@ -125,13 +149,12 @@
     <footer>
         <p>&copy; 2026 Branden Kosiance</p>
     </footer>
-<script>
-    // FIX: Forces page to be visible when using the Back Button
-    window.addEventListener('pageshow', function(event) {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-    });
-</script>
-    
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
 </body>
 </html>
