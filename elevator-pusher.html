@@ -1,1 +1,133 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechatronic Elevator Button Pusher | Branden Kosiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
+
+        /* HERO LOGO */
+        .hero-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .hero-image {
+            max-width: 200px;
+            height: auto;
+            border: none;
+            background: transparent;
+        }
+
+        /* GRID LAYOUT */
+        .gallery-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-row img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
+            background: #000; /* Letterboxing color */
+        }
+
+        /* TOP ROW: Stays exactly as is (Cropped Squares) */
+        .top-row img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        /* BOTTOM ROW: "Zoomed Out" effect using Contain */
+        .bottom-row img {
+            height: 450px; /* Increased height for better visibility */
+            object-fit: contain; /* Shows the ENTIRE image without cropping */
+        }
+
+        .gallery-row img:hover { transform: scale(1.02); opacity: 0.9; }
+
+        .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
+        .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
+        .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
+        .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
+
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; border-top: 1px solid #222; border-bottom: 1px solid #222; padding: 30px 0; margin-bottom: 60px; }
+        .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+        .spec-item p { margin: 0; font-weight: 600; color: #fff; }
+
+        .back-btn-container { text-align: center; padding-bottom: 60px; margin-top: 60px;}
+        .back-btn { display: inline-block; padding: 12px 30px; border: 1px solid #fff; border-radius: 50px; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
+        .back-btn:hover { background: #fff; color: #000; }
+
+        @media (max-width: 600px) {
+            .gallery-row { grid-template-columns: 1fr; }
+            .bottom-row img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="justify-content: center;">
+            <h1 class="brand">MECHATRONIC ELEVATOR BUTTON PUSHER</h1>
+        </div>
+    </nav>
+
+    <main class="project-content">
+        
+        <div class="hero-image-container">
+            <img src="tesla.png" alt="Tesla Logo" class="hero-image">
+        </div>
+
+        <div class="project-body">
+            <p>Senior Mechanical Design project in which I took took team lead postition to design and fabricate an electric wheelchair mounted mechatronic elevator button pusher to assist individuals with disabilities.</p>
+            
+            <div class="gallery-row top-row">
+                <img src="thumb-elevator.jpg" alt="Fixture Detail 1">
+                <img src="button1.jpg" alt="Fixture Detail 4">
+            </div>
+
+            <div class="gallery-row bottom-row">
+                <img src="button2.jpg" alt="Fixture Detail 2">
+                <img src="button3.jpg" alt="Fixture Detail 3">
+            </div>
+
+            <ul>
+                <li>Modelled design concept using SolidWorks PDM.</li>
+                <li>Utilized manufactuing techniques (lathe, 3D-printer, laser cutter) to construct rapid prototypes.</li>
+                <li>Created concise project deliverables, delegated tasks to members, created Gantt Chart timelines, and drove weekly meetings.</li>
+                <li>Assisted in wiring and programming of electronic system using Arduino frameworks.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>Team Lead, Mechanical Design Engineer</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks PDM, KiCAD, Arduino IDE, Microsoft Office</p></div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Branden Kosiance</p>
+    </footer>
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
+</body>
+</html>
