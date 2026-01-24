@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBECAST MEDIA MANAGEMENT | Branden Kosiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
+        /* IMAGE LOGIC */
+        .image-stack { 
+            width: 100%; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            gap: 30px;
+            margin-bottom: 40px; 
+        }
+        
+        .clean-import { 
+            width: 100%; 
+            max-height: 500px; 
+            object-fit: contain; 
+            border: none;
+            background: transparent;
+            border-radius: 12px;
+        }
+
+        /* NEW CLASS: Constrains the VibeCast logo size */
+        .secondary-logo {
+            max-width: 180px; 
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        /* TEXT STYLES */
+        .project-body { font-size: 1rem; line-height: 1.8; margin-bottom: 40px; }
+        .project-body p { margin-bottom: 25px; } 
+        
+        .project-body ul { list-style: none; padding: 0; margin-top: 20px;}
+        .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
+        .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
+
+        /* SECTION DIVIDER for VibeCast */
+        .secondary-section {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid #333; 
+        }
+
+        .project-title { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            color: #fff; 
+            text-align: center; 
+            text-transform: uppercase; 
+            margin-bottom: 30px; 
+            letter-spacing: 2px;
+        }
+
+        .back-btn-container { text-align: center; padding-bottom: 60px; margin-top: 60px;}
+        .back-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            border: 1px solid #fff; 
+            border-radius: 50px; 
+            color: #fff; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+            <div class="image-stack">
+                <img src="vibe.png" class="secondary-logo" alt="VibeCast Media">
+            </div>
+
+     <h2 class="project-title">VibeCast Media Management Agency</h2>
+            
+            <div class="project-body">
+                <p>Initiated by my passion for entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands.<strong> I have:</strong></p>
+                <ul>
+                    <li>Grossed five figures in &lt; 6 months.</li>
+                    <li>Connected viral influencers with some of the largest brands in the country.</li>
+                    <li>Employed team of 5+ people to drive business growth through internal and external avenues.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Branden Kosiance</p>
+    </footer>
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
+    
+</body>
+</html>
