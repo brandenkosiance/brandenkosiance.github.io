@@ -9,7 +9,7 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* IMAGE LOGIC */
+        /* LOGO LOGIC */
         .image-stack { 
             width: 100%; 
             display: flex; 
@@ -17,23 +17,13 @@
             align-items: center; 
             gap: 30px;
             margin-bottom: 40px; 
-        }
-        
-        .clean-import { 
-            width: 100%; 
-            max-height: 500px; 
-            object-fit: contain; 
-            border: none;
-            background: transparent;
-            border-radius: 12px;
+            margin-top: 40px;
         }
 
-        /* NEW CLASS: Constrains the VibeCast logo size */
         .secondary-logo {
             max-width: 180px; 
             height: auto;
             object-fit: contain;
-            margin-bottom: 20px;
         }
 
         /* TEXT STYLES */
@@ -44,13 +34,6 @@
         .project-body li { position: relative; padding-left: 25px; margin-bottom: 15px; }
         .project-body li::before { content: "■"; position: absolute; left: 0; color: #fff; top: 2px; }
 
-        /* SECTION DIVIDER for VibeCast */
-        .secondary-section {
-            margin-top: 80px;
-            padding-top: 60px;
-            border-top: 1px solid #333; 
-        }
-
         .project-title { 
             font-size: 2rem; 
             font-weight: 700; 
@@ -60,6 +43,20 @@
             margin-bottom: 30px; 
             letter-spacing: 2px;
         }
+
+        /* SPECS GRID: Fixed the Role, Location, Tools alignment */
+        .specs-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            border-top: 1px solid #333; 
+            border-bottom: 1px solid #333; 
+            padding: 30px 0; 
+            margin-bottom: 60px; 
+        }
+        
+        .spec-item h4 { color: #888; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
+        .spec-item p { margin: 0; font-weight: 600; color: #fff; }
 
         .back-btn-container { text-align: center; padding-bottom: 60px; margin-top: 60px;}
         .back-btn { 
@@ -78,23 +75,30 @@
 </head>
 <body>
 
-       <h2 class="project-title">VibeCast Media Management Agency</h2>
-    
-            <div class="image-stack">
-                <img src="vibe.png" class="secondary-logo" alt="VibeCast Media">
-            </div>
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="justify-content: center;">
+            <h1 class="brand">VIBECAST MEDIA MANAGEMENT</h1>
+        </div>
+    </nav>
+
+    <main class="project-content">
+
+        <div class="image-stack">
+            <img src="vibe.png" class="secondary-logo" alt="VibeCast Media">
+        </div>
+        
+        <h2 class="project-title">Agency Overview</h2>
             
-            <div class="project-body">
-                <p>Initiated by my passion for entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands.<strong> I have:</strong></p>
-                <ul>
-                    <li>Grossed five figures in &lt; 6 months.</li>
-                    <li>Connected viral influencers with some of the largest brands in the country.</li>
-                    <li>Employed team of 5+ people to drive business growth through internal and external avenues.</li>
-                </ul>
-            </div>
+        <div class="project-body">
+            <p>Initiated by my passion for entrepreneurship, I founded VibeCast Media Management, an agency which connects influencers with brands. <strong>I have:</strong></p>
+            <ul>
+                <li>Grossed five figures in &lt; 6 months.</li>
+                <li>Connected viral influencers with some of the largest brands in the country.</li>
+                <li>Employed team of 5+ people to drive business growth through internal and external avenues.</li>
+            </ul>
         </div>
 
-     <div class="specs-grid">
+        <div class="specs-grid">
             <div class="spec-item"><h4>Role</h4><p>Founder, CEO</p></div>
             <div class="spec-item"><h4>Location</h4><p>Victoria</p></div>
             <div class="spec-item"><h4>Tools</h4><p>Microsoft Office</p></div>
