@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Internship | Branden Kosiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="headshot.jpg">
+    <style>
+        .project-content { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            color: #ccc;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coming-soon-text {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-btn-container { text-align: center; }
+        .back-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            border: 1px solid #fff; 
+            border-radius: 50px; 
+            color: #fff; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+
+    <nav class="portfolio-nav">
+        <div class="nav-header-main" style="justify-content: center;">
+            <h1 class="brand">TESLA INTERNSHIP</h1>
+        </div>
+    </nav>
+
+    <main class="project-content">
+        <h1 class="coming-soon-text">Coming Soon...</h1>
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Branden Kosiance</p>
+    </footer>
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        });
+    </script>
+</body>
+</html>
