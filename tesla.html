@@ -1,62 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesla Internship | Branden Kosiance</title>
+    <title>Internship Experience | Branden Kosiance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="headshot.jpg">
     <style>
-        .project-content { 
-            max-width: 800px; 
-            margin: 0 auto; 
+        /* PAGE SPECIFIC STYLES */
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
             color: #ccc;
-            min-height: 60vh;
+        }
+
+        /* Centered Logo Logic */
+        .hero-image-container {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 40px;
         }
 
-        .coming-soon-text {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .hero-image {
+            max-width: 200px; /* Constrained for logo quality */
+            height: auto;
+            object-fit: contain;
+        }
+
+        .project-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 700;
             color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-align: center;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
         }
 
-        .back-btn-container { text-align: center; }
-        .back-btn { 
-            display: inline-block; 
-            padding: 12px 30px; 
-            border: 1px solid #fff; 
-            border-radius: 50px; 
-            color: #fff; 
-            text-decoration: none; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            letter-spacing: 1px;
-            transition: 0.3s;
+        .project-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
         }
-        .back-btn:hover { background: #fff; color: #000; }
+
+        .project-body ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+
+        .project-body li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .project-body li::before {
+            content: "■"; 
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 30px 0;
+            margin-bottom: 60px;
+        }
+
+        .spec-item h4 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .spec-item p {
+            margin: 0;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #222;
+            margin: 80px 0;
+        }
     </style>
 </head>
 <body>
 
     <nav class="portfolio-nav">
-        <div class="nav-header-main" style="justify-content: center;">
-            <h1 class="brand">TESLA INTERNSHIP</h1>
+        <div class="nav-header-main" style="align-items: center; justify-content: center;">
+            <div class="nav-identity" style="text-align: center;">
+                <h1 class="brand">FUTURE WORK</h1>
+            </div>
         </div>
     </nav>
 
     <main class="project-content">
-        <h1 class="coming-soon-text">Coming Soon...</h1>
+        
+        <div class="hero-image-container">
+            <img src="tesla.png" alt="Motorola Solutions" class="hero-image">
+        </div>
+
+        <h2 class="project-title">Battery Manufacturing Engineering Intern</h2>
+
+        <div class="project-body">
+            <p>I have accepted a role as a Battery Manufacturing Engineering internship at the most prominent sustainability company in the world. In this role I will be:</p>
+            <ul>
+                <li>Leading battery manufacturing line concept & build activities including generating line layouts, equipment specifications, business case generation, design reviews, tool install & commissioning efforts.</li>
+                <li>Leading mechanical design concept generation, tooling procurement / build and installation activities to improve existing battery manufacturing lines.</li>
+                <li>Exectuting product design changes  impacting battery manufacturing lines   </li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>Battery Manufacturing Engineer</p></div>
+            <div class="spec-item"><h4>Location</h4><p>San Francisco Bay Area</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>TBD</p></div>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="zipline.png" alt="City of Richmond" class="hero-image">
+            <h2 class="project-title" style="margin-top: 20px;">Zipline</h2>
+        </div>
+
+        <div class="project-body">
+            <p>Personal Project I am owning to develop a strong understanding of UAV physics similar to Zipline's fleet drones.</p>
+            <ul>
+                <li>Performed calculations to direct intial mechanical design decisions.</li>
+                <li>Designed fuselage and simulated body using CFD within SolidWorks, verfiying aerodynamic performance.</li>
+                <li>Created wiring schematic to decribe system wiring to achieve functionality.</li>
+            </ul>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item"><h4>Role</h4><p>Mechanical Design Engineer</p></div>
+            <div class="spec-item"><h4>Location</h4><p>Vacnouver</p></div>
+            <div class="spec-item"><h4>Tools</h4><p>SolidWorks, KiCad Microsoft Tools</p></div>
+        </div>
+
         <div class="back-btn-container">
             <a href="index.html" class="back-btn">Return to Portfolio</a>
         </div>
+
     </main>
 
     <footer>
