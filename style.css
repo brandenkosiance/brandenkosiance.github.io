@@ -131,6 +131,13 @@ body {
     transition: opacity 0.4s ease, transform 0.6s ease;
 }
 
+/* Zipline image: preserve full image without cropping */
+.image-box img[src="zipline.png"] {
+    object-fit: contain;
+    background-color: #000000;
+    filter: none;
+}
+
 /* UPDATED: INVERTED LABEL (Black Box, White Text) */
 .item-title {
     position: absolute;
@@ -196,6 +203,12 @@ body {
     transform: scale(1.04);
 }
 
+/* Keep Zipline image at full size during hover */
+.portfolio-item:hover .image-box img[src="zipline.png"] {
+    object-fit: contain;
+    filter: none;
+}
+
 /* --- PROJECT PAGE IMAGES --- */
 
 .hero-image-container {
@@ -221,6 +234,12 @@ body {
 .hero-image[src="tesla.png"] {
     background-color: #000000;
     filter: invert(1) hue-rotate(180deg);
+}
+
+/* Zipline project image: display original colors */
+.hero-image[src="zipline.png"] {
+    background-color: #000000;
+    filter: none;
 }
 
 /* Footer */
